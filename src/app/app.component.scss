@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  & > .sidebar {
+    min-width: 250px;
+    background: #ECF1F8;
+    height: inherit;
+
+  }
+  & > .content {
+    flex: 1;
+  }
+}

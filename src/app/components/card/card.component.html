@@ -1,0 +1,17 @@
+<div
+(click)="goToDetail()"
+class="card"
+>
+  <div class="card-image">
+    <img [src]="movie?.poster_path">
+  </div>
+  <div class="card-body">
+    <div class="title">
+      <span>{{ movie?.title }}</span>
+    </div>
+    <div class="note">
+      <span>Nota:</span>
+      <span>{{ movie?.vote_average }}</span>
+    </div>
+  </div>
+</div>

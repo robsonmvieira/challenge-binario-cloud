@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  display: flex;
+
+  & > .nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    & > ul {
+      & > li {
+        & a {
+          margin-right: 50px;
+          font-size: 1.5rem;
+          color: var(--main-black-color);
+        }
+      }
+    }
+  }
+}

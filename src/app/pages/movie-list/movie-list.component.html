@@ -1,0 +1,8 @@
+<div class="container">
+
+  <div class="cards" >
+    <div class="card" *ngFor="let movie of movies$ | async as movies">
+      <app-card [movie]="movie"></app-card>
+    </div>
+  </div>
+</div>

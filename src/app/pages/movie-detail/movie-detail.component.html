@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="movie">
+    <div class="movie-image">
+      <img [src]="(movie$| async)?.poster_path">
+    </div>
+    <div class="movie-detail">
+      <div class="title">
+        <span>
+          {{ (movie$| async)?.title }}
+        </span>
+      </div>
+      <div class="note">
+        <span>Nota:</span>
+        <span>{{ (movie$| async)?.vote_average }}</span>
+      </div>
+      <div class="overview">
+        <p>{{ (movie$| async)?.overview }}</p>
+      </div>
+      <div class="rate">
+        <div class="label">
+          <span *ngIf="!alreadyAvaliabled">Avaliar Filme</span>
+          <span *ngIf="alreadyAvaliabled">Avaliar Filme novamente</span>
+        </div>
+        <div class="form">
+          <input type="number" [(ngModel)]="rate" min='0'>
+          <button
+            [disabled]='!rate'
+            (click)='sendRate()'>avaliar</button>
+        </div>
+
+        <div class="remove-rate" *ngIf="alreadyAvaliabled">
+          <button
+            (click)='removeRate()'>Remover Avaliação</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

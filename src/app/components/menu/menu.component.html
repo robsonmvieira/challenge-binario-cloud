@@ -1,0 +1,10 @@
+<div class="container">
+  <nav class="nav">
+    <ul>
+      <li>
+        <a href="" *ngIf="(userAuthenticated | async)">Guest User</a>
+        <a href="" *ngIf="!(userAuthenticated | async)">Você ainda não está Logado</a>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,91 @@
+.container {
+  height: 100vh;
+
+  & > .movie {
+    margin-left: 20px;
+    display: flex;
+
+    & > .movie-detail {
+      margin-left: 20px;
+
+      & > .title {
+        margin-left: 30px;
+
+        & > span {
+          font-size: 30px;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+      }
+
+      & > .note {
+        margin-top: 30px;
+        margin-left: 25px;
+
+        & > span:first-of-type {
+          font-size: 1rem;
+          margin-right: 5px;
+          color: var(--main-black-color);
+        }
+        & > span:last-of-type {
+          font-size: 1rem;
+          font-weight: 600;
+          color: var(--main-black-color);
+        }
+      }
+
+      & > .overview {
+        margin-top: 30px;
+        margin-left: 30px;
+        max-width: 810px;
+        line-height: 1.5;
+        font-size: 1.3rem;
+        color: var(--main-black-color);
+      }
+
+      & > .rate {
+        margin-top: 30px;
+        margin-left: 30px;
+
+        & > .label {
+          span {
+            font-size: 1.4rem;
+            color: var(--main-black-color);
+          }
+        }
+
+        & > .form {
+
+          & > input {
+            height: 30px;
+            width: 120px;
+            margin-top: 10px;
+            height: 30px;
+            margin-top: 10px;
+            outline: none;
+          }
+
+          & > button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: var(--primary-blue);
+            color: var(--write);
+          }
+        }
+
+        & > .remove-rate {
+          margin-top: 20px;
+           button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: var(--danger);
+            color: var(--write);
+           }
+        }
+      }
+    }
+  }
+
+}
