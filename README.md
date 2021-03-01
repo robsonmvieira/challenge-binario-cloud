@@ -2,6 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
 
+
+# About
+ Esse é um desáfio para vaga de front-end developer usando angular
+
+
+## techs
+- [Angular](https://angular.io/)
+- [Ngxs](https://www.ngxs.io/)
+- [Toastr](https://github.com/scttcper/ngx-toastr)
+
+## Clone project
+
+```bash
+  # clonning the repository
+  git clone https://github.com/robsonmvieira/challenge-binario-cloud
+
+  # after cloned go to folder
+  cd folder
+  
+  # install all dependencies
+  npm install
+
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -20,35 +43,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 API: [https://www.themoviedb.org/documentation/api)
 
-Para chamadas da api utilize um usuário visitante(guest_session) isso irá facilitar seu trabalho.
 
-1) O App deve consistir de uma tela que deverá listar os filmes que estão em cartaz(now_playing), mostrando a imagem, título e ordenando por ordem decrescente de avaliação(vote_average).
+## Usabilidade
+a aplicação usa uma informação publica para recuperada do localstorage para evitar que o usuário tenha que fazer login a todo momento
+usado uma lib de toast para dar feedback ao usuário quando executa ações de avaliações.
 
-2) O usuário visitante poderá avaliar um filme.
+## Criatividade
+  O layout foi criado em base de trabalhos demonstrados no dribble e no pinterest
+## Código limpo e organização
+A aplicação foi modularizada ao máximo tornando fácil o reuso de components como o CardComponent que pode ser reutilizado tanto na página de listagem como na página de filmes já avaliado pelo o usuário.
+As informações sensíveis foram movidas para arquivo de environment.
 
-3) Listagem dos filmes avaliados pelo usuário visitante. 
+## Arquitetura
+Eu adicionei o padrão Flux para compartilhamento de estado tornando a store fonte única da verdade. Isolando as ações e delegando a chamada dos serviços para uma fonte única de verdade.
 
-4) O usuário poderá remover uma avaliação.
-
- **Os filmes devem estar descritos em português.
-
-Qualquer funcionalidade extra é bem vinda para agregar na solução básica proposta.
-
-O layout é por sua conta, seja criativo.
-
-Você será avaliado pela qualidade do código, pela modularidade, pela legibilidade, pela criatividade, pela quantidade de funcionalidades básicas e extra.
-
-
-# Arquitetura da solução/O que fazer
-
-No arquivo README do projeto explique o funcionamento e a solução adotada na sua implementação do desafio.
-
-## Avaliação
-
-Entre os critérios de avaliação estão:
-
-* Usabilidade
-* Criatividade
-* Código limpo e organização
-* Documentação de código
-* Documentação do projeto (readme)
