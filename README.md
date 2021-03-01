@@ -25,6 +25,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   npm install
 
 ```
+
+## API
+Para rodar o projeto você precisa se cadastrar e gerar uma Key no site da API:
+- [The movie db](https://www.themoviedb.org/documentation/api)
+
+Uma vez que você tenha a apikey, vá até o arquivo environment.ts que está dentro da pasta environments  e a coloque no local indicado
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
