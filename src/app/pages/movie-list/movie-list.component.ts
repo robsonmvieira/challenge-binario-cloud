@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { GetAllMovies, SetMovieSelected } from 'src/app/state/movies/movie.action';
 import { SetToken, Login } from 'src/app/state/auth/auth.action';
 import { AuthState } from 'src/app/state/auth/auth.state';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-movie-list',

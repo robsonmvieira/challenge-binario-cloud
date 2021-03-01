@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { Movie } from 'src/app/models/movie.entity';
 import { Login, SetToken } from 'src/app/state/auth/auth.action';
@@ -25,7 +26,10 @@ export class MovieDetailComponent implements OnInit {
   movieId: number = 0
   alreadyAvaliabled = false
 
-  constructor(private store: Store, private route:ActivatedRoute){}
+  constructor(
+    private toastrService: ToastrService,
+    private store: Store,
+    private route:ActivatedRoute){}
 
 
   ngOnInit(): void {
@@ -57,9 +61,19 @@ export class MovieDetailComponent implements OnInit {
 
   sendRate() {
     if(this.rate > 10) {
-      console.log('nota maior')
+      this.toastrService.error('Valor da nota Maior do que o permitido', 'error no valor da Avaliação.')
+      return
+    }
+
+    const correctValueFormat = this.rate % 1 * 10
+    if(Number(correctValueFormat) !== 0 && Number(correctValueFormat) !== 5) {
+      this.toastrService.error('Valor da nota  de avaliação está no formato incorreto', 'error no valor da Avaliação.')
+      return
     }
     this.store.dispatch(new RateMovie(this.movieId, this.rate)).subscribe(() => this.store.dispatch( new GetRatedMovies()))
+    this.toastrService.success('Avaliação criada com sucesso', 'Avaliação enviada.')
+    this.rate = null
+
   }
 
   removeRate() {

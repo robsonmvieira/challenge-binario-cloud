@@ -18,6 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthState } from './state/auth/auth.state';
 import { CardComponent } from './components/card/card.component';
 import { RatedVideoListComponentComponent } from './pages/rated-video-list-component/rated-video-list-component.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +32,11 @@ import { RatedVideoListComponentComponent } from './pages/rated-video-list-compo
     RatedVideoListComponentComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
     NgxsModule.forRoot([MovieState, AuthState], {
